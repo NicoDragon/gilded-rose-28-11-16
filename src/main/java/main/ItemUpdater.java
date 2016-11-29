@@ -9,12 +9,8 @@ public class ItemUpdater {
 
 	public void updateQuality(List<ItemImproved> items) {
 		for (ItemImproved item : items) {
-			updateOne(item);
+			item.update();
 		}
-	}
-
-	private void updateOne(ItemImproved item) {
-		item.update();
 	}
 
 }
