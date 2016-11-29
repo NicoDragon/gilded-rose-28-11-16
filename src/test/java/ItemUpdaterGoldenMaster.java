@@ -1,5 +1,12 @@
 import org.junit.Test;
 
+import item.AgedBrieItem;
+import item.BackStageItem;
+import item.Item;
+import item.ItemImproved;
+import item.SulfurasItem;
+import main.ItemUpdater;
+
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
@@ -8,8 +15,8 @@ public class ItemUpdaterGoldenMaster {
 
     @Test
     public void runGolderMaster() throws Exception {
-        ArrayList<Item> items = itemsSet();
-        ArrayList<Item> legacyitemsSet = itemsSet();
+        ArrayList<ItemImproved> items = itemsSet();
+        ArrayList<ItemImproved> legacyitemsSet = itemsSet();
         ItemUpdater itemUpdater = new ItemUpdater();
         ItemUpdaterLegacy itemUpdaterLegacy = new ItemUpdaterLegacy();
 
@@ -26,14 +33,15 @@ public class ItemUpdaterGoldenMaster {
         }
     }
 
-    private ArrayList<Item> itemsSet() {
-        ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("+5 Dexterity Vest", 10, 20));
-        items.add(new Item("Aged Brie", 2, 0));
-        items.add(new Item("Elixir of the Mongoose", 5, 7));
-        items.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
-        items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        items.add(new Item("Conjured Mana Cake", 3, 6));
+    private ArrayList<ItemImproved> itemsSet() {
+        ArrayList<ItemImproved> items = new ArrayList<ItemImproved>();
+        items.add(new ItemImproved("+5 Dexterity Vest", 10, 20));
+        items.add(new AgedBrieItem("Aged Brie", 2, 0));
+        items.add(new ItemImproved("Elixir of the Mongoose", 5, 7));
+        items.add(new SulfurasItem("Sulfuras, Hand of Ragnaros", 0, 80));
+        items.add(new BackStageItem("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        items.add(new ItemImproved("Conjured Mana Cake", 3, 6));
+        
         return items;
     }
 }
