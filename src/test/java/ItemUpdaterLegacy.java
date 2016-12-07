@@ -1,10 +1,8 @@
 import java.util.List;
 
-import item.ItemImproved;
-
 public class ItemUpdaterLegacy {
 
-    public void updateQuality(List<ItemImproved> items)
+    public void updateQuality(List<Item> items)
     {
         for (int i = 0; i < items.size(); i++)
         {
